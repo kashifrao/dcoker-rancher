@@ -1,0 +1,10 @@
+
+    - name: Install Rancher
+      docker_container:
+        state: started
+        name: rancher
+        published_ports:
+          - "7001:8080"         
+        image: rancher/server:stable
+        restart: true
+      become_user: root
